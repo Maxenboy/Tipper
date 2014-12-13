@@ -1,0 +1,31 @@
+html{
+	background: url(../img/wooden-floor.jpg);
+	background-size: contain;
+	background-repeat:  repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.container{
+	min-height: 720px;
+	width: 90%;
+	margin: 0 auto;
+	background-image: url(../img/Oldbook.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.questions{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+.reciept{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
