@@ -7,7 +7,7 @@ header
     text-align: center;
 }
 header img {
-	
+
 }
 
 .container{
@@ -15,7 +15,6 @@ header img {
 	flex-direction: row;
 	width: 70%;
 	margin: auto;
-	position: absolute;
 	bottom: 0;
 	left: 0;
 	top: 300px;
@@ -34,10 +33,16 @@ header img {
 }
 
 .reciept{
+	font-family: Receipt;
+	font-size: 10px;
 	flex-grow: 1;
 	text-align: center;
 	background-color: orange;
 	display: table-cell; 
 	vertical-align: middle;
+}
+@font-face{
+	font-family: Receipt;
+	src: url(../font/Receiptfont.ttf);
 }
 
