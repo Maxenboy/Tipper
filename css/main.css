@@ -1,48 +1,29 @@
 html{
+	background-image: url(../img/wood.png);
+}
 
+header{
+	height:150px;
+	text-align: center;
 }
-header
-{
-    height:150px;
-    text-align: center;
-}
+
 header img {
 
 }
 
-.container{
-	display:flex;
-	flex-direction: row;
-	width: 70%;
-	margin: auto;
-	bottom: 0;
-	left: 0;
-	top: 300px;
-	right: 0;
-	height: 100%;
-	display: table;
-}
-
-.questions{
-	flex-grow: 1;
-	text-align: center;
-	background-color: blue;
-	height: 100%;
-	display: table-cell; 
-	vertical-align: middle;
-}
-
-.reciept{
-	font-family: Receipt;
-	font-size: 10px;
-	flex-grow: 1;
-	text-align: center;
-	background-color: orange;
-	display: table-cell; 
-	vertical-align: middle;
-}
 @font-face{
 	font-family: Receipt;
 	src: url(../font/Receiptfont.ttf);
 }
 
+div.container div{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%,-50%);
+}
+div ul{
+	list-style-type: none;
+}
