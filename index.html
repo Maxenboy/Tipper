@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset='utf-8'>
 		<title>Tipper</title>
-		<link type="text/css" rel="stylesheet" href="css/main.css">
-		<link rel="shortcut icon" type="image/png" href="img/hand129.png">
-		<script src="javascript/main.js"></script>
+		<link type='text/css' rel='stylesheet' href='css/main.css'>
+		<link rel='shortcut icon' type='image/png' href='img/hand129.png'>
+		<script src='javascript/main.js'></script>
 	</head>
 	<header>
-		<img src="img/logo.png" alt="Tipper logo"/>
+		<a href='index.html'><img src='img/logo.png' alt='Tipper logo'/></a>
 	</header>
 	<body>
 		<section>
-			<div class="container">
-				<div class="content">
-					How do you feel?
-					<ul>
-						<li>Generous</li>
-						<li>Don't know</li>
-						<li>Cheap</li>
-					</ul>
-				</div>
+			<div class='span' id='questions'>
+				How are you feeling?
 			</div>
-		</section>	
+			<div class='container' id='answer'>
+				<table>
+					<tbody>
+						<tr>
+							<td>Generous</td> <td><img src='img/arrow.png' alt='next'></td>
+						</tr>
+						<tr>
+							<td>Don't know</td> <td><img src='img/arrow.png' alt='next'></td>
+						</tr>
+						<tr>
+							<td>Cheap</td> <td><img src='img/arrow.png' alt='next'></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id='footer'>
+					poop
+			</div>
+		</section>
 	</body>
 </html>
