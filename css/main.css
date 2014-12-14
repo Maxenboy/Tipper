@@ -3,12 +3,11 @@ html{
 }
 
 header{
-	height:150px;
 	text-align: center;
 }
 
 header img {
-
+	width: 40%;
 }
 
 @font-face{
@@ -16,26 +15,28 @@ header img {
 	src: url(../font/Receiptfont.ttf);
 }
 
-div.container{
+div.content{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	padding-bottom: 150px;
+}
+
+.container{
+	width: 100%;
 }
 
 td img{
 	float: right;
 	max-height: 20px;
 	max-width: 20px;
-	-webkit-filter: grayscale(100%);
 }
 
 .span{
 	width: 100%;
 	text-align: center;
-	padding-top: 20px;
 	font-size: 40px;
+	padding-top: 20px;
 }
 
 #footer{
@@ -43,6 +44,13 @@ td img{
 	position:absolute;
 	bottom:0;
 	left:0;
-	min-height: 150px;
 	background-image: url(../img/redwhite.png);
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+#footer a:link, a:visited{
+	color: black;
+	text-decoration: none;
 }
