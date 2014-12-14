@@ -5,14 +5,16 @@
 	<title>Tipper</title>
 	<link type='text/css' rel='stylesheet' href='css/main.css'>
 	<link rel='shortcut icon' type='image/png' href='img/hand129.png'>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
 	<script src='javascript/main.js'></script>
 </head>
 <header>
-	<a href='index.html'><img src='img/logo.png' alt='Tipper logo'/></a>
+	<a href='index.html'><img id='logo' src='img/logo.png' alt='Tipper logo'/></a>
 </header>
 <body>
 	<section>
-	<div class='container'>
+		<div class='container'>
 			<div class='span' id='questions'>
 				How are you feeling?
 			</div>
@@ -20,13 +22,13 @@
 				<table>
 					<tbody>
 						<tr>
-							<td>Generous</td> <td><img src='img/arrow.png' alt='next'></td>
+							<td>Generous</td> <td><img id='gen' src='img/arrow.png' alt='next'></td>
 						</tr>
 						<tr>
-							<td>Don't know</td> <td><img src='img/arrow.png' alt='next'></td>
+							<td>Don't know</td> <td><img id='rand' src='img/arrow.png' alt='next'></td>
 						</tr>
 						<tr>
-							<td>Cheap</td> <td><img src='img/arrow.png' alt='next'></td>
+							<td>Cheap</td> <td><img id='cheap' src='img/arrow.png' alt='next'></td>
 						</tr>
 					</tbody>
 				</table>
