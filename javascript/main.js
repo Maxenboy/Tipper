@@ -17,4 +17,16 @@ $(document).ready(function(){
 			'font-size': '1em'
 		});
 	});
+	$('#footer').children().mouseenter(function() {
+		$('img', this).animate({
+			'width': '5em',
+			'height': '5em'
+		});
+	});
+	$('#footer').children().mouseleave(function() {
+		$('img', this).animate({
+			'width': '4em',
+			'height': '4em'
+		});
+	});
 });
