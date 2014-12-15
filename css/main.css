@@ -31,6 +31,9 @@ td img{
 	max-height: 1.25em;
 	max-width: 1.25em;
 }
+td{
+	cursor: pointer;
+}
 
 .span{
 	width: 100%;
@@ -55,17 +58,45 @@ td img{
 	text-decoration: none;
 }
 
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
+.stars{
+    width: 130px;
+    height: 26px;
+    background: url(../img/stars.png) 0 0 repeat-x;
+    position: relative;
 }
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
+
+.stars .rating{
+    height: 26px;
+    width:65%;
 }
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
+
+.stars input{
+    display: none;
 }
+
+.stars label{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 130px;
+    cursor: pointer;
+}
+.stars:hover label{
+    display: block;
+}
+.stars label:hover{
+    background: url(../img/stars.png) 0 -52px repeat-x;
+}
+
+.stars label + input + label{width: 104px;}
+.stars label + input + label + input + label{width: 78px;}
+.stars label + input + label + input + label + input + label{width: 52px;}
+.stars label + input + label + input + label + input + label + input + label{width: 26px;}
+
+.stars input:checked + label{
+    display: block;
+    background: url(../img/stars.png) 0 -52px repeat-x;
+}
+
