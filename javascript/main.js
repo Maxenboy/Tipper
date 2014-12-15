@@ -50,6 +50,8 @@ $(document).ready(function(){
 				rate = 0.01;
 				break;
 		}
+		$('#answer').addClass('rating'),
+		$('#answer').append('<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>')
 	});
 
 });
