@@ -36,22 +36,33 @@ $(document).ready(function(){
 	});
 
 	$('tr').click(function() {
-		var rate;
+		var character;
 		$('#answer').empty(),
 		$('#questions').text('Please rate the overall service')
 		switch($(this).attr('id')){
 			case 'gen':
-			rate = 0.1;
+			character = 0.1;
 			break;
 			case 'rand':
-			rate = (Math.random() * 0.09 + 0.01).toFixed(2);
+			character = (Math.random() * 0.09 + 0.01);
 			break;
 			case 'cheap':
-			rate = 0.01;
+			character = 0.01;
 			break;
 		}
-		$('#answer').append("<div class='stars'><div class='rating'></div><input type='radio' name='rating' id='star5' value='5'><label for='star5'></label><input type='radio' name='rating' id='star4' value='4'><label for='star4'></label><input type='radio' name='rating' id='star3' value='3'><label for='star3'></label><input type='radio' name='rating' id='star2' value='2'><label for='star2'></label><input type='radio' name='rating' id='star1' value='1'><label for='star1'></label></div>")
+		$('#answer').append("<div class='stars'><div class='rating'></div><input type='radio' name='rating' id='5' value='5'><label for='5'></label><input type='radio' name='rating' id='4' value='4'><label for='4'></label><input type='radio' name='rating' id='3' value='3'><label for='3'></label><input type='radio' name='rating' id='2' value='2'><label for='2'></label><input type='radio' name='rating' id='1' value='1'><label for='1'></label></div>")
+		localStorage.setItem('character',JSON.stringify(character));
+	});
+
+	$('body').on('click', 'label', function() {
+		var rating = parseInt($(this).attr('for'));
+		localStorage.setItem('rating', JSON.stringify(rating));
+		$('.detailed').empty(),
+		$('.detailed').append("<a class='leftoption' id='more'>Detailed service questions</a><a class='rightoption' id='Total amount'>To total amount</a>")
+
 	});
 
 });
+
+
 
