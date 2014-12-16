@@ -89,7 +89,7 @@ td{
 	display: block;
 }
 .stars label:hover{
-	background: url(../img/fullstar.png) 0 0 repeat-x;
+	background: url(../img/hoverstar.png) 0 0 repeat-x;
 }
 
 .stars label + input + label{width: 206px;}
