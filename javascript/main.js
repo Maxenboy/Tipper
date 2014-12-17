@@ -1,5 +1,8 @@
 var index = 0;
 var result = [];
+var character;
+var rating
+var tot;
 
 $(document).ready(function(){
 	$('tr').mouseenter(function(){
@@ -39,7 +42,6 @@ $(document).ready(function(){
 	});
 
 	$('tr').click(function() {
-		var character;
 		emptyElement($('#answer'));
 		nextQuestion();
 		switch($(this).attr('id')){
@@ -53,13 +55,11 @@ $(document).ready(function(){
 			character = 0.01;
 			break;
 		}
-		localStorage.setItem('character',JSON.stringify(character));
 	});
 
 	$('body').on('click', 'label', function() {
 		if (index == 1) {
-			var rating = parseInt($(this).attr('for'));
-			localStorage.setItem('rating', JSON.stringify(rating));
+			rating = parseInt($(this).attr('for'));
 			emptyElement($('.detailed'));
 			$('.detailed').append("<a class='leftoption' id='more'>Detailed service questions</a><a class='rightoption' id='Total amount'>To total amount</a>")
 		}else{
@@ -68,13 +68,14 @@ $(document).ready(function(){
 	});
 
 	$('body').on('click', '.leftoption', function() {
-		emptyElement($('.detailed'));
+		$('.detailed').remove()
 		emptyElement($('#answer'));
 		nextQuestion();
 	});
 
 	$('body').on('click', '.rightoption', function() {
-		receipt();
+		$('.detailed').remove()
+		total();
 		
 	});
 
@@ -85,7 +86,7 @@ function nextQuestion(){
 	var next = questions[index];
 	index ++;
 	if(index > questions.length){
-		receipt();
+		total();
 	}else{
 		$('#questions').text(next);
 		createStars();
@@ -102,13 +103,24 @@ function emptyElement(element){
 
 function clickStar(starElement){
 	result.push(starElement.attr('for'));
-	emptyElement($('#questions')),
 	emptyElement($('#answer'))
 	nextQuestion();
 }
 
+function total(){
+	$('#questions').text('Please fill in the full amount of your check'),
+	emptyElement($('#answer'));
+	$('#answer').append("<input type='number' id='tot' min='10'><br><input type='submit' value='Tip' class='tipButton'>")
+	$('#answer').css({
+		'text-align': 'center',
+	});
+	//receipt()
+}
+
 function receipt(){
-	emptyElement($('#questions')),
-	emptyElement($('#answer'))
+	emptyElement($('.container')),
+	$('#wrapper').switchClass('container', 'result')
+	$('#wrapper').text(tot),
+	$('hr').remove()
 }
 

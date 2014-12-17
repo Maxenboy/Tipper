@@ -1,14 +1,25 @@
 html{
 	background-image: url(../img/wood.png);
+	height: 84%;
+}
+
+body{
+	height: 100%;
+	margin: 0;
 }
 
 header{
 	text-align: center;
 }
 
+section{
+	height: 58%;
+}
+
 header img {
 	width: 20%;
 	padding-right: 2em;
+	padding-bottom: 2em;
 }
 
 @font-face{
@@ -49,7 +60,7 @@ td{
 	text-align: center;
 	font-size: 2.5vmax;
 	text-shadow: 0px 2px 3px #666;
-	padding-top: 0.5em;
+	
 }
 
 #footer{
@@ -60,7 +71,7 @@ td{
 	background-image: url(../img/redwhite.png);
 	text-align: center;
 	padding-top: 0.63em;
-	min-height: 15%
+	max-height: 16%
 }
 
 #footer a:link, a:visited{
@@ -141,4 +152,20 @@ hr{
 
 b{
 	font-family: Harlow;
+}
+
+.tipButton{
+	
+}
+
+.result{
+	margin: 0 auto;
+	text-align: center;
+	width: 70%;
+	height: 100%;
+	font-family: Harlow;
+	background-image: url(../img/receipt.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
