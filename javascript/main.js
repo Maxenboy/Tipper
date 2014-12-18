@@ -3,6 +3,7 @@ var result = [];
 var character;
 var rating
 var tot;
+var questions = ['Please rate the overall service', 'How was the food?', 'How was the waiter/waitress?', 'How was the environment?']
 
 $(document).ready(function(){
 	$('tr').mouseenter(function(){
@@ -79,10 +80,14 @@ $(document).ready(function(){
 		
 	});
 
+	$('body').on('click', '.tipButton', function() {
+		tot = parseInt($('#tot').val());
+		receipt();
+	});
+
 });
 
 function nextQuestion(){
-	var questions = ['Please rate the overall service', 'How was the food?', 'How was the waiter/waitress?', 'How was the environment?']
 	var next = questions[index];
 	index ++;
 	if(index > questions.length){
@@ -102,7 +107,7 @@ function emptyElement(element){
 }
 
 function clickStar(starElement){
-	result.push(starElement.attr('for'));
+	result.push(parseInt(starElement.attr('for')));
 	emptyElement($('#answer'))
 	nextQuestion();
 }
@@ -110,17 +115,38 @@ function clickStar(starElement){
 function total(){
 	$('#questions').text('Please fill in the full amount of your check'),
 	emptyElement($('#answer'));
-	$('#answer').append("<input type='number' id='tot' min='10'><br><input type='submit' value='Tip' class='tipButton'>")
+	$('#answer').append("<input type='number' id='tot' min='10' autofocus><br><input type='submit' value='Tip' class='tipButton'>")
 	$('#answer').css({
 		'text-align': 'center',
 	});
-	//receipt()
 }
 
 function receipt(){
 	emptyElement($('.container')),
-	$('#wrapper').switchClass('container', 'result')
-	$('#wrapper').text(tot),
+	$('.container').append("<div class='left'></div><div class='right'></div>")
+	$('#wrapper').switchClass('container', 'result', 2000, 'easeOutBounce')
+	var left = questions[0] + ':' + '<br>';
+	var right= rating + '<br>';
+	var choises = 0;
+	if (result.length>1) {
+		for (var i = 1; i < questions.length; i++) {
+			left+= questions[i] + ':' + '<br>';
+			right+= result[i-1] + '<br>';
+			choises+= result[i-1];
+		}
+		var test = character*(choises/3);
+		var test1 = test.toFixed(2);
+		var test2 = parseFloat(test1);
+		var test3 = Math.round(test2);
+		var tip = (choises/3) > rating ? Math.round(parseFloat((charachter*(choises/3)).toFixed(2))) : Math.round((character*rating).toFixed(2)); 
+		left+= '<br><br><br>Full amount of your check:<br>Your tip: ' + tip*100 + '%<br><br>Total:';
+		var finalTot = tot+(tot*tip);
+		right+='<br><br><br>' + tot + '<br>' + tot*tip + '<br><br>' + finalTot; 
+	} else{
+
+	}
+	$('.left').append(left),
+	$('.right').append(right),
 	$('hr').remove()
 }
 
