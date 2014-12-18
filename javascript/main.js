@@ -4,6 +4,7 @@ var character;
 var rating
 var tot;
 var questions = ['Please rate the overall service', 'How was the food?', 'How was the waiter/waitress?', 'How was the environment?']
+var tip;
 
 $(document).ready(function(){
 	$('tr').mouseenter(function(){
@@ -82,7 +83,11 @@ $(document).ready(function(){
 
 	$('body').on('click', '.tipButton', function() {
 		tot = parseInt($('#tot').val());
-		receipt();
+		if(isNaN(tot)){
+			window.alert('You need to fill in your check amount');
+		}else{
+			receipt();
+		}
 	});
 
 });
@@ -123,7 +128,7 @@ function total(){
 
 function receipt(){
 	emptyElement($('.container')),
-	$('.container').append("<div class='left'></div><div class='right'></div>")
+	$('.container').append("<div class='left'></div><div class='right'></div><hr id='seperator'><hr id='seperator'><div class='bottomleft'></div><div class='bottomright'></div>")
 	$('#wrapper').switchClass('container', 'result', 2000, 'easeOutBounce')
 	var left = questions[0] + ':' + '<br>';
 	var right= rating + '<br>';
@@ -134,18 +139,18 @@ function receipt(){
 			right+= result[i-1] + '<br>';
 			choises+= result[i-1];
 		}
-		var tip = (choises/3) > rating ? parseFloat((character*(choises/3)).toFixed(2)) : character*rating; 
-		left+= '<br><br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(2) + '%<br><hr><br>Total:';
-		var finalTot = tot+(tot*tip);
-		right+='<br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><hr><br>' + finalTot.toFixed(0); 
+		tip = (choises/3) > rating ? parseFloat(character*(choises/3)) : character*rating; 
+		left+= '<br><br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(0) + '%<br><br>';
+		right+='<br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><br>'; 
 	} else{
-		var tip = (character*rating).toFixed(2);
-		left+= '<br><br><br><br><br><br>Full amount of your check:<br>Your tip: ' + tip*100 + '%<br><hr><br>Total:';
-		var finalTot = tot+(tot*tip);
-		right+='<br><br><br><br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><hr><br>' + finalTot.toFixed(0); 
+		tip = character*rating;
+		left+= '<br><br><br><br><br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(0) + '%<br><br>';
+		right+='<br><br><br><br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><br>'; 
 	}
 	$('.left').append(left),
 	$('.right').append(right),
-	$('#seperator').remove()
+	$('.bottomleft').append('Total:'),
+	$('.bottomright').append((tot+(tot*tip)).toFixed(0)),
+	$('#removeOnReceipt').remove()
 }
 
