@@ -50,7 +50,7 @@ $(document).ready(function(){
 			character = 0.1;
 			break;
 			case 'rand':
-			character = (Math.random() * 0.09 + 0.01);
+			character = (Math.random() * 0.05 + 0.01);
 			break;
 			case 'cheap':
 			character = 0.01;
@@ -134,19 +134,18 @@ function receipt(){
 			right+= result[i-1] + '<br>';
 			choises+= result[i-1];
 		}
-		var test = character*(choises/3);
-		var test1 = test.toFixed(2);
-		var test2 = parseFloat(test1);
-		var test3 = Math.round(test2);
-		var tip = (choises/3) > rating ? Math.round(parseFloat((charachter*(choises/3)).toFixed(2))) : Math.round((character*rating).toFixed(2)); 
-		left+= '<br><br><br>Full amount of your check:<br>Your tip: ' + tip*100 + '%<br><br>Total:';
+		var tip = (choises/3) > rating ? parseFloat((character*(choises/3)).toFixed(2)) : character*rating; 
+		left+= '<br><br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(2) + '%<br><hr><br>Total:';
 		var finalTot = tot+(tot*tip);
-		right+='<br><br><br>' + tot + '<br>' + tot*tip + '<br><br>' + finalTot; 
+		right+='<br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><hr><br>' + finalTot.toFixed(0); 
 	} else{
-
+		var tip = (character*rating).toFixed(2);
+		left+= '<br><br><br><br><br><br>Full amount of your check:<br>Your tip: ' + tip*100 + '%<br><hr><br>Total:';
+		var finalTot = tot+(tot*tip);
+		right+='<br><br><br><br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><hr><br>' + finalTot.toFixed(0); 
 	}
 	$('.left').append(left),
 	$('.right').append(right),
-	$('hr').remove()
+	$('#seperator').remove()
 }
 
