@@ -164,13 +164,13 @@ b{
 	font-family: Harlow;
 }
 .tipButton {
-    color: white;
-    text-decoration: none;
-    background-color: #DE1400;
-    font-family: Harlow;
-    font-size: 1.5em;
-    border-radius: 8px;
-    box-shadow: 0px 9px 0px rgba(150,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+	color: white;
+	text-decoration: none;
+	background-color: #DE1400;
+	font-family: Harlow;
+	font-size: 1.5em;
+	border-radius: 8px;
+	box-shadow: 0px 9px 0px rgba(150,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
 	width: 126px;
 	-webkit-transition: all .1s ease;
 	-moz-transition: all .1s ease;
@@ -180,11 +180,11 @@ b{
 }
 
 .tipButton:active {
-    -webkit-box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-    -moz-box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-    box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-    position: relative;
-    top: 6px;
+	-webkit-box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	position: relative;
+	top: 6px;
 }
 
 .result{
@@ -192,7 +192,6 @@ b{
 	width: 70%;
 	height: 100%;
 	font-family: Receipt;
-	font-size: 1vmin;
 	background-image: url(../img/receipt.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -201,7 +200,7 @@ b{
 
 .left{
 	width: 85%;
-	height: 70%;
+	height: 35%;
 	padding-left: 2%;
 	float: left;
 	line-height: 162%;
@@ -210,10 +209,26 @@ b{
 
 .right{
 	width: 13%;
-	height: 70%;
+	height: 35%;
 	float: right;  
 	line-height: 162%;
 	padding-top: 2%;
+}
+
+.middleleft{
+	clear: both;
+	width: 85%;
+	height: 35%;
+	float: left;
+	line-height: 162%;
+	padding-left: 2%;
+}
+
+.middleright{
+	width: 13%;
+	height: 35%;
+	float: right;
+	line-height: 162%;
 }
 
 .bottomleft{

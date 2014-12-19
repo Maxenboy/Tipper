@@ -48,10 +48,10 @@ $(document).ready(function(){
 		nextQuestion();
 		switch($(this).attr('id')){
 			case 'gen':
-			character = 0.1;
+			character = 0.07;
 			break;
 			case 'rand':
-			character = (Math.random() * 0.05 + 0.01);
+			character = (Math.random() * 0.04 + 0.02);
 			break;
 			case 'cheap':
 			character = 0.01;
@@ -128,7 +128,7 @@ function total(){
 
 function receipt(){
 	emptyElement($('.container')),
-	$('.container').append("<div class='left'></div><div class='right'></div><hr id='seperator'><hr id='seperator'><div class='bottomleft'></div><div class='bottomright'></div>")
+	$('.container').append("<div class='left'></div><div class='right'></div><div class='middleleft'></div><div class='middleright'></div><hr id='seperator'><hr id='seperator'><div class='bottomleft'></div><div class='bottomright'></div>")
 	$('#wrapper').switchClass('container', 'result', 2000, 'easeOutBounce')
 	var left = questions[0] + ':' + '<br>';
 	var right= rating + '<br>';
@@ -140,15 +140,13 @@ function receipt(){
 			choises+= result[i-1];
 		}
 		tip = (choises/3) > rating ? parseFloat(character*(choises/3)) : character*rating; 
-		left+= '<br><br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(0) + '%<br><br>';
-		right+='<br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><br>'; 
 	} else{
 		tip = character*rating;
-		left+= '<br><br><br><br><br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(0) + '%<br><br>';
-		right+='<br><br><br><br><br><br>' + tot + '<br>' + (tot*tip).toFixed(0) + '<br><br>'; 
 	}
 	$('.left').append(left),
 	$('.right').append(right),
+	$('.middleleft').append('<br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(0) + '%'),
+	$('.middleright').append('<br><br>' + tot + '<br>' + (tot*tip).toFixed(0)),
 	$('.bottomleft').append('Total:'),
 	$('.bottomright').append((tot+(tot*tip)).toFixed(0)),
 	$('#removeOnReceipt').remove()
