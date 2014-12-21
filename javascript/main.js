@@ -31,15 +31,13 @@ $(document).ready(function(){
 
 	$('#footer').children().mouseenter(function() {
 		$('img', this).animate({
-			'width': '5em',
-			'height': '5em'
+			'width': '6%',
 		});
 	});
 
 	$('#footer').children().mouseleave(function() {
 		$('img', this).animate({
-			'width': '4em',
-			'height': '4em'
+			'width': '4%',
 		});
 	});
 
@@ -65,8 +63,9 @@ $(document).ready(function(){
 			emptyElement($('.detailed'));
 			$('.detailed').append("<a class='leftoption' id='more'>Detailed service questions</a><a class='rightoption' id='Total amount'>To total amount</a>")
 		}else{
-			clickStar($(this));
+			clickStar($(this).attr('for'));
 		}
+		
 	});
 
 	$('body').on('click', '.leftoption', function() {
@@ -112,8 +111,8 @@ function emptyElement(element){
 }
 
 function clickStar(starElement){
-	result.push(parseInt(starElement.attr('for')));
-	emptyElement($('#answer'))
+	result.push(parseInt(starElement));
+	emptyElement($('#answer'));
 	nextQuestion();
 }
 
