@@ -1,6 +1,6 @@
 {
   "name": "tipper",
-  "version": "0.0.0",
+  "version": "0.10.13",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -13,5 +13,20 @@
     "jade": "~1.9.1",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0"
-  }
+  },
+  "description": "Tipper\r ======\r An easier way to give the correct tip",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Maxenboy/Tipper.git"
+  },
+  "author": "Max",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Maxenboy/Tipper/issues"
+  },
+  "keywords": [
+    "heroku"
+  ]
 }
