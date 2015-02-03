@@ -1,0 +1,251 @@
+html{
+	background-image: url(../img/wood.png);
+	height: 84%;
+}
+
+body{
+	height: 100%;
+	margin: 0;
+}
+
+header{
+	text-align: center;
+}
+
+section{
+	height: 58%;
+}
+
+header img {
+	width: 20%;
+	padding-right: 2em;
+	padding-bottom: 1em;
+}
+
+@font-face{
+	font-family: Receipt;
+	src: url(../font/Receiptfont.ttf);
+}
+
+@font-face{
+	font-family: Harlow;
+	src: url(../font/Harlow.ttf);
+}
+
+div.content{
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 1.5vmax;
+	line-height: 200%;
+}
+
+.container{
+	width: 100%;
+	font-family: Harlow;
+}
+
+td img{
+	float: right;
+	max-height: 1.25em;
+	max-width: 1.25em;
+}
+td{
+	cursor: pointer;
+}
+
+.span{
+	width: 100%;
+	text-align: center;
+	font-size: 2.5vmax;
+	text-shadow: 0px 2px 3px #666;
+	
+}
+
+#footer{
+	width: 100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background-image: url(../img/redwhite.png);
+	text-align: center;
+	padding-top: 0.63em;
+	min-height: 16%
+}
+
+#footer a:link, a:visited{
+	color: black;
+	text-decoration: none;
+}
+
+#pic {
+	width: 4%;
+}
+
+.stars{
+	width: 260px;
+	height: 52px;
+	background: url(../img/emptystar.png) 0 0 repeat-x;
+	position: relative;
+}
+
+.stars .rating{
+	height: 52px;
+	width: 65%;
+}
+
+.stars input{
+	display: none;
+}
+
+.stars label{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 52px;
+	width: 260px;
+	cursor: pointer;
+}
+.stars:hover label{
+	display: block;
+}
+.stars label:hover{
+	background: url(../img/hoverstar.png) 0 0 repeat-x;
+}
+
+.stars label + input + label{width: 206px;}
+.stars label + input + label + input + label{width: 156px;}
+.stars label + input + label + input + label + input + label{width: 104px;}
+.stars label + input + label + input + label + input + label + input + label{width: 52px;}
+
+.stars input:checked + label{
+	display: block;
+	background: url(../img/fullstar.png) 0 0 repeat-x;
+}
+
+.detailed{
+	width: 99%;
+	position: absolute;
+	display: inline;
+	bottom: 20%;
+	color: black;
+	font-family: Harlow;
+	font-size: 26px;
+}
+
+.leftoption{
+	float: left;
+	padding-left: 25%;
+}
+
+.rightoption{
+	float: right;
+	padding-right: 25%;
+
+}
+.detailed a:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+hr{
+	width: 100%;
+	height: 2px;
+}
+
+#seperator{
+	background-color: #E0C4C1;
+	height: 3px;
+	border-radius: 162px;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	margin-bottom: 0.5%;
+}
+
+b{
+	font-family: Harlow;
+}
+.tipButton {
+	color: white;
+	text-decoration: none;
+	background-color: #DE1400;
+	font-family: Harlow;
+	font-size: 1.5em;
+	border-radius: 8px;
+	box-shadow: 0px 9px 0px rgba(150,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+	width: 126px;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+.tipButton:active {
+	-webkit-box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	box-shadow: 0px 3px 0px rgba(150,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	position: relative;
+	top: 6px;
+}
+
+.result{
+	margin: 0 auto;
+	width: 70%;
+	height: 100%;
+	font-family: Receipt;
+	background-image: url(../img/receipt.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.left{
+	width: 85%;
+	height: 35%;
+	padding-left: 2%;
+	float: left;
+	line-height: 162%;
+	padding-top: 2%;
+	overflow: hidden;
+}
+
+.right{
+	width: 13%;
+	height: 35%;
+	float: right;  
+	line-height: 162%;
+	padding-top: 2%;
+}
+
+.middleleft{
+	clear: both;
+	width: 85%;
+	height: 35%;
+	float: left;
+	line-height: 162%;
+	padding-left: 2%;
+}
+
+.middleright{
+	width: 13%;
+	height: 35%;
+	float: right;
+	line-height: 162%;
+}
+
+.bottomleft{
+	clear: both;
+	padding-left: 2%;
+	width: 85%;
+	height: 14%;
+	float: left;
+}
+
+.bottomright{
+	width: 13%;
+	height: 14%;
+	float: right;
+}
