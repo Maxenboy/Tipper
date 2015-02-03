@@ -96,6 +96,7 @@ td{
 }
 
 .stars input{
+	display: none;
 }
 
 .stars label{

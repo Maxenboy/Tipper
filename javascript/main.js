@@ -144,10 +144,10 @@ function receipt(){
 	}
 	$('.left').append(left),
 	$('.right').append(right),
-	$('.middleleft').append('<br><br>Full amount of your check:<br>Your tip: ' + (tip*100).toFixed(0) + '%'),
-	$('.middleright').append('<br><br>' + tot + '<br>' + (tot*tip).toFixed(0)),
+	$('.middleleft').append('<br><br>Full amount of your check:<br>Your tip: ' + (tip.toFixed(2)*100).toFixed(0) + '%'),
+	$('.middleright').append('<br><br>' + tot + '<br>' + (tot*tip.toFixed(2)).toFixed(0)),
 	$('.bottomleft').append('Total:'),
-	$('.bottomright').append((tot+(tot*tip)).toFixed(0)),
+	$('.bottomright').append((tot+(tot*tip.toFixed(2))).toFixed(0)),
 	$('#removeOnReceipt').remove()
 }
 
